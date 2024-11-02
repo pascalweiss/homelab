@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: podinfo
+  namespace: flux-system # must be the namesapce where the Flux system is installed, since we define the git repo, that is monitored by flus
+spec:
+  interval: 30s # how often to pull the git repo
+  ref:
+    branch: master
+  url: https://github.com/stefanprodan/podinfo
