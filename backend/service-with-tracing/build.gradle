@@ -23,10 +23,7 @@ dependencies {
 
 	// no traces will be sent if this dependency is not added
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-
 	implementation 'org.projectlombok:lombok:1.18.24'
-	// Tracing
 
 	// provides the otel tracer, which manages the lifecycle of a span.
 	// micrometer-tracing is added transitively. It provides a simple facade to most popular tracer libs
