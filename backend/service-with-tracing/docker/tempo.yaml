@@ -1,0 +1,25 @@
+server:
+  http_listen_port: 3200
+  grpc_listen_port: 9095
+
+distributor:
+  receivers:
+    zipkin:
+      endpoint: "0.0.0.0:9411"  # Listen on port 9411 for Zipkin traces
+
+ingester:
+  trace_idle_period: 5m
+  max_block_bytes: 5242880         # 5MB in bytes
+  max_block_duration: 1m
+
+compactor:
+  compaction:
+    compacted_block_retention: 24h
+
+storage:
+  trace:
+    backend: local                  # Specify local storage explicitly
+    wal:
+      path: /var/lib/tempo/wal       # Path for Write-Ahead Log storage
+    local:
+      path: /var/lib/tempo/blocks    # Path for block storage
