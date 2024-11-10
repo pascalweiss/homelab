@@ -27,7 +27,10 @@ dependencies {
 
 	implementation 'org.projectlombok:lombok:1.18.24'
 	// Tracing
-	// bridges the Micrometer Observation API to OpenTelemetry
+
+	// provides the otel tracer, which manages the lifecycle of a span.
+	// micrometer-tracing is added transitively. It provides a simple facade to most popular tracer libs
+	// and prevents vendor lock-in
 	implementation 'io.micrometer:micrometer-tracing-bridge-otel'
 
 	// exporter for sending traces to Zipkin (port: 9411)
