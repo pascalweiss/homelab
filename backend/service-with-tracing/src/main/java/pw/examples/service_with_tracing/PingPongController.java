@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class PongController {
+public class PingPongController {
 
     @Value("${pw.homelab.pong.port}")
     private String pongPort;
