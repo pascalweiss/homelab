@@ -21,18 +21,7 @@ services:
     volumes:
       - ./tempo-data:/var/lib/tempo
       - ./tempo.yaml:/etc/tempo/tempo.yaml
-    environment:
-      - TEMPO_STORAGE_BACKEND=local
     command: [ "-config.file=/etc/tempo/tempo.yaml" ]
-
-  tempo-query:
-    image: grafana/tempo-query:latest
-    ports:
-      - "16686:16686"   # Jaeger-compatible endpoint
-    environment:
-      - TEMPO_ADDRESS=tempo:3200
-    depends_on:
-      - tempo
 
 volumes:
   tempo-data:
