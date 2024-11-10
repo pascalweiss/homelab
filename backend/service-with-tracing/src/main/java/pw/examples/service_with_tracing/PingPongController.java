@@ -16,26 +16,26 @@ public class PingPongController {
     @Value("${pw.homelab.pong.port}")
     private String pongPort;
 
-
+    private final PingPongService service;
     private final RestTemplate restTemplate;
 
     /**
      * Receives a ping from the user and requests a pong from the pong service.
      */
     @GetMapping("/ping")
-    public String receiveFromUser() {
+    public String receivePing() {
         logInfo("received ping, sending pong");
         var response = restTemplate.getForObject(getPongUrl(), String.class);
-        return "ping " + response;
+        return service.getPing() + response;
     }
 
     /**
      * Receives a pong from the ping service.
      */
     @GetMapping("/pong")
-    public String receiveRand() {
+    public String receivePong() {
         logInfo("Received pong, returning pong");
-        return "pong";
+        return service.getPong();
     }
 
     private String getPongUrl() {
