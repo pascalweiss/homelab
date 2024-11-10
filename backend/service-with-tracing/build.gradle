@@ -20,6 +20,8 @@ repositories {
 dependencies {
 	// Foundation
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// no traces will be sent if this dependency is not added
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 
