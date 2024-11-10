@@ -18,9 +18,23 @@ repositories {
 }
 
 dependencies {
+	// Foundation
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+
+	implementation 'org.projectlombok:lombok:1.18.24'
+	// Tracing
+	// bridges the Micrometer Observation API to OpenTelemetry
+	implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+
+	// exporter for sending traces to Zipkin (port: 9411)
+	implementation 'io.opentelemetry:opentelemetry-exporter-zipkin'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
 }
 
 tasks.named('test') {
