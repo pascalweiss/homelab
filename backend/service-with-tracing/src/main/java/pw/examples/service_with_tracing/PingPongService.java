@@ -1,6 +1,6 @@
 package pw.examples.service_with_tracing;
 
-import io.opentelemetry.api.trace.Tracer;
+import io.micrometer.tracing.annotation.NewSpan;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,13 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PingPongService {
 
-    Tracer tracer;
-
     /**
      * returns pong with a custom trace
      */
+    @NewSpan
     public String getPong() {
-        tracer.spanBuilder("pong-service").startSpan().end();
         return "pong";
     }
 
@@ -22,6 +20,7 @@ public class PingPongService {
     /**
      * returns ping
      */
+    @NewSpan
     public String getPing() {
         return "ping";
     }
