@@ -6,4 +6,4 @@
  */
 
 rootProject.name = 'homelab'
-include 'backend:service-with-tracing'
+include 'backend:brave-tracer-with-spring'
