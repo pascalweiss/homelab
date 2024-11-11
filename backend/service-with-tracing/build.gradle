@@ -25,13 +25,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.projectlombok:lombok:1.18.24'
 
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '3.3.5'
+
+
 	// provides the otel tracer, which manages the lifecycle of a span.
 	// micrometer-tracing is added transitively. It provides a simple facade to most popular tracer libs
 	// and prevents vendor lock-in
-	implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
 
-	// exporter for sending traces to Zipkin (port: 9411)
-	implementation 'io.opentelemetry:opentelemetry-exporter-zipkin'
+	implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
+
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

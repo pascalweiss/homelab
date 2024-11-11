@@ -1,12 +1,14 @@
 package pw.examples.service_with_tracing;
 
-import io.opentelemetry.api.trace.Span;
+import io.micrometer.tracing.Tracer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Objects;
 
 @Slf4j
 @RestController
@@ -15,6 +17,8 @@ public class PingPongController {
 
     @Value("${pw.homelab.pong.port}")
     private String pongPort;
+
+    private final Tracer tracer;
 
     private final PingPongService service;
     private final RestTemplate restTemplate;
@@ -43,8 +47,7 @@ public class PingPongController {
     }
 
     private void logInfo(String msg) {
-        var traceId = Span.current().getSpanContext().getTraceId();
+        var traceId = Objects.requireNonNull(tracer.currentSpan()).context().traceId();
         log.info("traceId: {}, msg: {}", traceId, msg);
     }
-
 }
