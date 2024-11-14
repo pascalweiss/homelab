@@ -6,4 +6,5 @@
  */
 
 rootProject.name = 'homelab'
+include 'backend:brave-tracer-with-artemis'
 include 'backend:brave-tracer-with-spring'
