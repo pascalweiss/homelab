@@ -1,3 +1,6 @@
 [submodule "backend/brave-tracer-with-spring"]
 	path = backend/brave-tracer-with-spring
 	url = git@github.com:pascalweiss/brave-tracer-with-spring.git
+[submodule "backend/spring-artemis-brave-tracer"]
+	path = backend/spring-artemis-brave-tracer
+	url = git@github.com:pascalweiss/spring-artemis-brave-tracer.git
