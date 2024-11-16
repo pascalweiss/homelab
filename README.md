@@ -4,7 +4,7 @@ This repository contains the configuration for my homelab. It is used for deploy
 to my Kubernetes clusters. These applications are either developed by myself, or are open source projects that I find
 interesting. They are either used for testing new technologies, or for personal use. 
 
-### Components (wip)
+### Components (wip!)
 - **kubernetes**: for container orchestration
 - **gitlab**: for version control and CI/CD
 - **helm**: for deploying applications
