@@ -1,10 +1,10 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: nginx
   namespace: default
 spec:
-  interval: 1m
+  interval: 1m # how often flux cd should check for updates in the helm release file
   chart:
     spec:
       chart: ./charts/nginx
@@ -12,4 +12,4 @@ spec:
         kind: GitRepository
         name: flux-system # this repo was defined for flux cd at bootstrapping
         namespace: flux-system
-      interval: 1m
+      interval: 1m # how often flux cd should check for updates in the helm chart file
