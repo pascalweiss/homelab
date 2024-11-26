@@ -10,6 +10,6 @@ spec:
       chart: ./charts/nginx
       sourceRef:
         kind: GitRepository
-        name: flux-system
+        name: flux-system # this repo was defined for flux cd at bootstrapping
         namespace: flux-system
       interval: 1m
