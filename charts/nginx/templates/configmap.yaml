@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-index-html # the name of the config map is the name of the release
 data:
-  # the index.html file is defined in the values.yaml file
   index.html: |
     {{ .Values.indexHTML | indent 4 }}
