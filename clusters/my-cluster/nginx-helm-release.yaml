@@ -13,3 +13,14 @@ spec:
         name: flux-system # this repo was defined for flux cd at bootstrapping
         namespace: flux-system
       interval: 1m # how often flux cd should check for updates in the helm chart file
+  values:
+    indexHtml: |
+      <!doctype html>
+        <html>
+        <head>
+          <title>My Custom Page</title>
+        </head>
+        <body>
+          <h1>Welcome to my custom Nginx page!</h1>
+        </body>
+        </html>
