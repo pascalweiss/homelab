@@ -4,4 +4,4 @@ metadata:
   name: {{ .Release.Name }}-index-html # the name of the config map is the name of the release
 data:
   index.html: |
-    {{ .Values.indexHTML | indent 4 }}
+    {{ .Values.indexHtml | nindent 4 }}
