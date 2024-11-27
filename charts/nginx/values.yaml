@@ -105,9 +105,9 @@ autoscaling:
 
 # Additional volumes on the output Deployment definition.
 volumes:
-    - name: html
-      configMap:
-        name: {{ .Release.Name }}-index-html
+  - name: html
+    configMap:
+      name: {{ .Release.Name }}-index-html
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
   - name: html
