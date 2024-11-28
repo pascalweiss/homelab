@@ -103,14 +103,12 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-# Additional volumes on the output Deployment definition.
-volumes:
-  - name: html
-    configMap:
-      name: nginx-index-html
-# Additional volumeMounts on the output Deployment definition.
-volumeMounts:
-  - name: html
+volumes: # A volume to store the index.html file.
+  - name: html # The volume name.
+    configMap: # A ConfigMap volume populated with the index.html file.
+      name: nginx-index-html # The ConfigMap name.
+volumeMounts: # Mount the volume to the Nginx container.
+  - name: html # must match the volume name
     mountPath: "/usr/share/nginx/html"
 
 indexHtml: |
