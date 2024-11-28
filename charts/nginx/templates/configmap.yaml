@@ -4,4 +4,4 @@ metadata:
   name: {{ .Release.Name }}-index-html
 data:
   index.html: |
-    {{ .Values.indexHtml | nindent 4 }}
+    {{ .Values.indexHtml | default "<!doctype html><html><body>Default HTML content</body></html>" | nindent 4 }}
