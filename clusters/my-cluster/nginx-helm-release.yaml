@@ -24,5 +24,6 @@ spec:
       <body>
         <h1>Welcome to my custom Nginx page!</h1>
         <p>The release overwrote the default index.html.</p>
+        <p> this was done by changing the indexHtml value in the HelmRelease spec.</p> 
       </body>
       </html>
