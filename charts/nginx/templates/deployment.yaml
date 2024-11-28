@@ -46,14 +46,13 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
-          volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-      {{- with .Values.volumes }}
-      volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+          volumeMounts: # Mount the volume to the Nginx container.
+            - name: html # must match the volume name
+              mountPath: "/usr/share/nginx/html"
+      volumes: # A volume to store the index.html file.
+        - name: html # The volume name.
+          configMap: # A ConfigMap volume populated with the index.html file.
+            name: {{ .Release.Name }}-index-html
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

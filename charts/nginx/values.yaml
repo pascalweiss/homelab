@@ -103,26 +103,8 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-volumes: # A volume to store the index.html file.
-  - name: html # The volume name.
-    configMap: # A ConfigMap volume populated with the index.html file.
-      name: nginx-index-html # The ConfigMap name.
-volumeMounts: # Mount the volume to the Nginx container.
-  - name: html # must match the volume name
-    mountPath: "/usr/share/nginx/html"
-# This is the default value for the index.html content. It is overwritten by the HelmRelease,
-# Which demonstrates how to customize helm releases on different deployments.
-#indexHtml: |
-#  <!doctype html>
-#  <html>
-#  <head>
-#    <title>My Custom Page</title>
-#  </head>
-#  <body>
-#    <h1>Welcome to my custom Nginx page!</h1>
-#  </body>
-#  </html>
-
+volumes: []
+volumeMounts: []
 nodeSelector: {}
 
 tolerations: []
