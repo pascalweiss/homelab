@@ -2,6 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-index-html
-data: # The index.html file.
+# The index.html file. The value is received from values.yaml by default.
+# In this example, it is overwritten by the HelmRelease,
+# which allows to customize the index.html file for different deployments
+data:
   index.html: |
     {{ .Values.indexHtml | nindent 4 }}

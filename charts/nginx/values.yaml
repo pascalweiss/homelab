@@ -110,7 +110,8 @@ volumes: # A volume to store the index.html file.
 volumeMounts: # Mount the volume to the Nginx container.
   - name: html # must match the volume name
     mountPath: "/usr/share/nginx/html"
-
+# This is the default value for the index.html content. It is overwritten by the HelmRelease,
+# Which demonstrates how to customize helm releases on different deployments.
 indexHtml: |
   <!doctype html>
   <html>

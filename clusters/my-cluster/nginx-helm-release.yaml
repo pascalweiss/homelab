@@ -14,6 +14,7 @@ spec:
         namespace: flux-system
       interval: 1m # how often flux cd should check for updates in the helm chart file
   values:
+    # Overwrites the content for the index.html file in the ConfigMap
     indexHtml: |
       <!doctype html>
       <html>
