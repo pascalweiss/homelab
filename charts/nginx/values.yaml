@@ -107,11 +107,22 @@ autoscaling:
 volumes:
   - name: html
     configMap:
-      name: {{ .Release.Name }}-index-html
+      name: nginx-index-html
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
   - name: html
     mountPath: "/usr/share/nginx/html"
+
+indexHtml: |
+  <!doctype html>
+  <html>
+  <head>
+    <title>My Custom Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my custom Nginx page!</h1>
+  </body>
+  </html>
 
 nodeSelector: {}
 
