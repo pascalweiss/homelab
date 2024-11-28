@@ -23,6 +23,6 @@ spec:
       </head>
       <body>
         <h1>Welcome to my custom Nginx page!</h1>
-        <p>The release overwrote the default index.html file thrice.</p>
+        <p>The release overwrote the default index.html.</p>
       </body>
       </html>
