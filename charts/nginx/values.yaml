@@ -112,16 +112,16 @@ volumeMounts: # Mount the volume to the Nginx container.
     mountPath: "/usr/share/nginx/html"
 # This is the default value for the index.html content. It is overwritten by the HelmRelease,
 # Which demonstrates how to customize helm releases on different deployments.
-indexHtml: |
-  <!doctype html>
-  <html>
-  <head>
-    <title>My Custom Page</title>
-  </head>
-  <body>
-    <h1>Welcome to my custom Nginx page!</h1>
-  </body>
-  </html>
+#indexHtml: |
+#  <!doctype html>
+#  <html>
+#  <head>
+#    <title>My Custom Page</title>
+#  </head>
+#  <body>
+#    <h1>Welcome to my custom Nginx page!</h1>
+#  </body>
+#  </html>
 
 nodeSelector: {}
 
