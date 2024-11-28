@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: nginx
+  name: nginx-with-overwritten-values
   namespace: default
 spec:
   interval: 1m # how often flux cd should check for updates in the helm release file
