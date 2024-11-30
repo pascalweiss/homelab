@@ -10,11 +10,12 @@ First, start the container
 Then, package the chart
 ```shell
 cd charts/busybox
-helm package .
+./package_chart.sh
 ```
 And push it to chartmuseum
 
 ```shell
+cd package
 curl -u <user> --data-binary "@busybox-0.1.0.tgz"
 ```
 
