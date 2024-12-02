@@ -26,7 +26,7 @@ echo ""
 echo "Charts are stored in $(pwd)/charts"
 echo ""
 
-docker run --rm -it \
+sudo docker run --rm -it \
   -p 8080:8080 \
   -e DEBUG=1 \
   -e STORAGE=local \
