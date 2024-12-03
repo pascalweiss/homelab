@@ -1,12 +1,14 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 # Default values
 USER_NAME="chartuser"
 USER_PASS="mypass"
+INTERACTIVE_FLAG="-it"
 
 # Function to display usage instructions
 usage() {
-    echo "Usage: $0 [--user USER_NAME] [--password USER_PASS]"
+    echo "Usage: $0 [-d] [--user USER_NAME] [--password USER_PASS]"
+    echo "  -d                     Run the container in the background"
     echo "  --user USER_NAME       Specify the username (default: chartuser)"
     echo "  --password USER_PASS   Specify the password (default: mypass)"
     exit 1
@@ -15,6 +17,7 @@ usage() {
 # Parse command-line arguments
 while [[ "$#" -gt 0 ]]; do
     case $1 in
+        -d) INTERACTIVE_FLAG="-d" ;;
         --user) USER_NAME="$2"; shift ;;
         --password) USER_PASS="$2"; shift ;;
         *) echo "Unknown parameter passed: $1"; usage ;;
@@ -26,7 +29,7 @@ echo ""
 echo "Charts are stored in $(pwd)/charts"
 echo ""
 
-sudo docker run --rm -it \
+sudo docker run --rm $INTERACTIVE_FLAG \
   -p 8080:8080 \
   -e DEBUG=1 \
   -e STORAGE=local \
