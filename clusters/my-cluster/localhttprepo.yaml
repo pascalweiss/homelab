@@ -1,0 +1,20 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: myhelmrepo
+  namespace: default
+spec:
+  interval: 1m0s
+  url: http://192.168.0.11:8080
+  secretRef:
+    name: myhelmrepo-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: myhelmrepo-secret
+  namespace: default
+stringData:
+  username: "chartuser"
+  password: "mypass"

@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: busybox
+      version: 0.1.0
+      sourceRef:
+        kind: HelmRepository
+        name: myhelmrepo
+        namespace: default
+      interval: 1m
