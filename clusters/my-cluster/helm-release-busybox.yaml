@@ -11,6 +11,6 @@ spec:
       version: 0.1.0
       sourceRef:
         kind: HelmRepository
-        name: myhelmrepo
+        name: local-http-repo
         namespace: default
       interval: 1m

@@ -1,19 +1,20 @@
+# This repo is set up using docker/chartmuseum.
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: myhelmrepo
+  name: local-http-repo
   namespace: default
 spec:
   interval: 1m0s
   url: http://192.168.0.11:8080
   secretRef:
-    name: myhelmrepo-secret
+    name: local-http-repo-secret
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: myhelmrepo-secret
+  name: local-http-repo-secret
   namespace: default
 stringData:
   username: "chartuser"
