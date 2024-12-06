@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: mysql
+  name: mysql # name of the HelmRepository resource
   namespace: default
 spec:
   type: oci
