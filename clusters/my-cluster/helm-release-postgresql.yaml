@@ -16,7 +16,6 @@ spec:
       interval: 1m
   values:
     auth:
-      postgresql-username: "myuser"
-      postgresql-password: "mypass"
-      postgresql-database: "mydatabase"
-
+      username: "myuser"
+      password: "mypass"
+      database: "mydatabase"
