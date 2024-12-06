@@ -14,9 +14,9 @@ spec:
         name: mysql
         namespace: default
       interval: 1m
-    values:
-      auth:
-        username: "myuser"
-        password: "mypass"
-        database: "mydatabase"
+  values:
+    auth:
+      username: "myuser"
+      password: "mypass"
+      database: "mydatabase"
 
