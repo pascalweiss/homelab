@@ -1,14 +1,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: mysql
+  name: postgresql
   namespace: default
 spec:
   interval: 1m
   chart:
     spec:
-      chart: mysql
-      version: '9.10.9'
+      chart: postgresql
+      version: '17.2.0'
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -16,7 +16,7 @@ spec:
       interval: 1m
   values:
     auth:
-      username: "myuser"
-      password: "mypass"
-      database: "mydatabase"
+      postgresql-username: "myuser"
+      postgresql-password: "mypass"
+      postgresql-database: "mydatabase"
 
